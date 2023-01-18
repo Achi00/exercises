@@ -1,38 +1,342 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Audiowide&family=Bebas+Neue&family=Dancing+Script:wght@700&family=Dongle:wght@700&family=DynaPuff:wght@600&family=Fugaz+One&family=Gemunu+Libre:wght@600&family=Goldman:wght@700&family=Hubballi&family=Inter:wght@900&family=Italiana&family=Kanit:wght@100;300;500&family=Kdam+Thmor+Pro&family=Koulen&family=Lato&family=League+Spartan:wght@100&family=Lobster&family=Monoton&family=Montserrat:wght@200&family=Noto+Sans:wght@800&family=Odibee+Sans&family=Oleo+Script&family=Orbitron&family=Oswald:wght@500&family=Pacifico&family=Press+Start+2P&family=Questrial&family=Righteous&family=Roboto+Mono:wght@100&family=Roboto:wght@700&family=Rubik:wght@400;600&family=Russo+One&family=Secular+One&family=Silkscreen&family=Syncopate:wght@700&family=Train+One&family=Ubuntu:wght@300&family=Unbounded:wght@300&family=Varela+Round&display=swap');
+
+body {
+  font-family: 'Varela Round', sans-serif;
+  background-color: #050917;
+  color: #b9b9b9;
+  user-select: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html, body {
+  overflow-x: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* navbar */
+.navbar {
+  background-color: rgb(10, 12, 35);
+  position: relative;
+  top: 0;
+  right: 15%;
+  width: 110vw;
+}
+/* nav icon */
+.icon:hover {
+  color: red;
+}
+
+.changeColor {
+  color: #9d0208;
+}
+.changeColor:hover {
+  color: red;
+}
+
+.nav-stack{
+  /* background-color: #414141; */
+  border-radius: 25px;
+}
+
+.hero {
+  font-family: 'Kanit', sans-serif
+}
+
+p:first-of-type {
+  font-weight: 400;
+}
+p::first-letter {
+  font-size: 35px;
+  text-transform: capitalize;
+}
+p {
+  font-size: 22px;
+  line-height: 35px;
+  font-weight: 600;
+  padding: 0.2rem;
+}
+
+h1 {
+  font-family: 'Righteous', cursive;
+  font-size: 10vw;
+}
+
+/* bg image */
+.bg {
+  position: absolute;
+  top: -6%;
+  left: 20%;
+  width: 140%;
+  height: auto;
+  border-radius: 45px;
+   -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+      mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+}
+
+h2:hover .icon{
+  border-radius: 30px;
+  background-color: #000000;
+}
+
+.icon {
+  border-radius: 10px;
+  background-color: #471313;
+  transition: 0.2s ease-in-out;
+}
+
+.icon:hover {
+  border-radius: 30px;
+  background-color: #31343C;
+}
+
+.link {
+  padding: 1rem;
+  transition: 0.2s ease-in-out;
+}
+.link:hover {
+  background-color: #31343C;
+  border-radius: 25px;
+}
+.link:hover .icon{
+  background-color: #31343C;
+  border-radius: 25px;
+}
+
+/* logo */
+.logo h1{
+  padding: 2rem;
+  letter-spacing: 5px;
+  transition: 0.2s ease-in-out;
+  font-size: 2vw;
+}
+.logo h1 span{
+  letter-spacing: 0px;
+  color: #848484;
+  transition: 0.2s ease-in-out;
+  font-size: 1.5vw;
+}
+
+.logo:hover {
+  color: #848484;
+}
+.logo:hover span{
+  color: #FDFDFD;
+  font-size: 2vw;
+  letter-spacing: 3px;
+}
+
+/* main button */
+button {
+  font-size: 50px;
+}
+
+.btn-icon {
+  background-color: #9d0208;
+  border-radius: 10px;
+  margin-left: 15px;
+}
+
+/* search head text */
+.search-span {
+  color: white;
+  background-color: #471313;
+  border-radius: 25px;
+  padding: 1rem;
+  transition: 0.2s ease-in-out;
+}
+.search-span:hover {
+  color: red;
+  background-color: #494949;
+}
+
+.search-span .span-icon {
+  background-color: #9d0208;
+  border-radius: 15px;
+  transition: 0.2s ease-in-out;
+  position: relative;
+  top: 5px;
+}
+
+.search-span:hover .span-icon {
+  color: #9d0208;
+  background-color: #494949;
+}
+
+.right-arrow,
+.left-arrow {
+  cursor: pointer;
+  background: transparent;
+  outline: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FF2625;
+  font-size: 25px;
+  border-radius: 4px;
+  position: absolute;
+  bottom: -20px;
+  right: 80px;
+  transform: scale(1, 1);
+  transition: 0.3s all ease-in-out;
+}
+
+.right-arrow {
+  right: 140px;
+}
+
+.right-arrow:hover,
+.left-arrow:hover {
+  transform: scale(1.3, 1.3);
+}
+
+.react-horizontal-scrolling-menu--wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.detail-image {
+  width: 729px;
+  height: 742px;
+  border-radius: 35px;
+  border: 5px solid #D32F2F;
+}
+
+.hero-banner-img {
+  position: absolute;
+  right: 40px;
+  top: 0px;
+  width: 700px;
+  height: 900px;
+  margin-top: -330px;
+
+}
+
+.exercise-card {
+  height: 485px;
+  width: 400px;
+  border-radius: 25px;
+  margin: 0 auto;
+  margin-top: 25px;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-bottom: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.exercise-card img {
+  height: 430px;
+  width: 350px;
+  border-radius: 25px;
+  margin: 15px auto;
+  border: 10px solid #9d0208;
+  transition: 0.3s ease-in-out;
+}
+
+.bodyPart-card {
+  transform: scale(1, 1);
+  transition: 0.3s ease-in-out;
+}
+
+.exercise-card:hover,
+.bodyPart-card:hover,
+.exercise-card img:hover {
+  border: 10px solid rgb(21, 18, 41);
+  background-color: #050917;
+}
+
+.search-btn {
+  height: 55px;
+  transition: 0.2s ease-in-out;
+}
+
+.search-btn:hover {
+  color: #FF2625 !important;
+  border: 1px solid #FF2625 !important;
+}
+
+.exercise-video {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 24px;
+  width: 387px;
+  height: 381px;
+  text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width:1200px) {
+  .detail-image {
+    width: 300px;
+    height: 300px;
   }
-  to {
-    transform: rotate(360deg);
+
+
+  .react-horizontal-scrolling-menu--scroll-container {
+    width: 500px;
+  }
+
+  .left-arrow,
+  .right-arrow {
+    position: static !important;
+    padding: 2rem;
+  }
+
+  .hero-banner-img {
+    display: none;
+  }
+
+  .exercise-card {
+    width: 320px;
+  }
+
+  .exercise-video {
+    width: 320px;
+    height: 300px;
+  }
+  .bg {
+    display: none;
+  }
+  .navbar {
+    position: inherit;
+    right: 0;
+  }
+
+}
+
+@media screen and (max-width:360px) {
+  .exercise-card {
+    width: 210px;
+    position: relative;
+    right: 70%;
+    padding: 0 10rem 0;
+  }
+  .bg {
+    display: none;
+  }
+  .navbar {
+    position: inherit;
+    right: 0;
+  }
+  .logo {
+    position: absolute;
+    right: 0;
+    font-size: 25px;
   }
 }
